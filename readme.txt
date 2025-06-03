@@ -62,3 +62,11 @@ Salia un error en la consola sobre la imagen logo192.png, que borre por no ser p
         --vamos a ajustar las rutas de las imágenes de mi header antes de estilizar
         --Vamos a definir algunas animaciones globales, como shine dentro de theme en una archivo llamado animations.ts
 
+**Avance del día, mi componente Header ya tiene estilos, apliqué estilos globales al body, al html y *, terminé los 
+mixins, las animaciones y eso, pero mi componente header aun necesita:
+    --Aplicar correctamente los media querys segun el ejemplo✅
+    --hacer algunos ajustes de estilos por temas de especificidad✅
+    --Aplicar la lógica correspondiente
+        Sigo clavado con js, en React se usa useState para reenderizar cosas o tomar decisiones
+        --Falta aplicar la logica de cambiar de fixed al header
+----------Quedará pendiente la logica del fixed en el header que necesitamos más componentes para provarlo
