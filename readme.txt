@@ -70,3 +70,8 @@ mixins, las animaciones y eso, pero mi componente header aun necesita:
         Sigo clavado con js, en React se usa useState para reenderizar cosas o tomar decisiones
         --Falta aplicar la logica de cambiar de fixed al header
 ----------Quedará pendiente la logica del fixed en el header que necesitamos más componentes para provarlo
+
+**Hemos terminado el componente Banner
+
+**--Estoy estilizando el componente GuideRegister, y he recordado que quizá sea mejor construir toda
+la UI antes de aplicar la lógica

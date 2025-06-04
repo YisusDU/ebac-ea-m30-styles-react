@@ -28,9 +28,6 @@ const shine = () => css`
 
   &:hover::before {
     animation: ${shineKeyframes} 1s forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation: shine 1s;
-    -webkit-animation-fill-mode: forwards;
   }
 `;
 
