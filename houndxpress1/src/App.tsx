@@ -5,6 +5,7 @@ import GlobalStyles from "./theme/GlobalStyles";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import GuideRegister from "./components/GuideReguister";
+import GeneralState from "./components/GeneralState";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <main>
         <Banner />
         <GuideRegister />
+        <GeneralState />
       </main>
     </ThemeProvider>
   );

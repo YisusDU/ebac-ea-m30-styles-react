@@ -20,7 +20,7 @@ const HeaderContainer = styled.header`
   margin: 0 auto;
   z-index: 6;
   padding: 5px;
-  transition: all 1s ease-in-out;
+  transition: all .7s ease-in-out;
 
   &.fixed {
     position: fixed;
