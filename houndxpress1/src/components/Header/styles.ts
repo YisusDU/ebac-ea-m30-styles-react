@@ -47,8 +47,10 @@ const HeaderContainer = styled.header`
   @media screen and (max-width: ${sizesMedia.md}) {
     width: 100%;
     ${flex("column", "center", "center")};
+  }
 
-    &.fix {
+  @media screen and (prefers-color-scheme: dark) {
+    &.fixed {
       background-color: rgb(44 44 44 / 62%);
     }
   }
