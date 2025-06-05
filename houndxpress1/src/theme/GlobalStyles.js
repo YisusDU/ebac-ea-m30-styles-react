@@ -4,7 +4,7 @@ import reset from "styled-reset";
 const GlobalStyles = createGlobalStyle`
     ${reset}
     * {
-        font-family: "Open Sans", sans-serif;
+        font-family: "Open Sans", sans-serif !Important;
         margin: 0;
         padding: 0;
         box-sizing: border-box;

@@ -29,15 +29,17 @@ const box = (
 
 //BG color primario
 const colorBg = (
-  color: string = "#fff",
+  color: string | ((props: any) => string) = "#fff",
   bg: string | ((props: any) => string) = primaryColor
 ) => css`
-  color: ${color};
+  color: ${typeof color === "function" ? color : color};
   background-color: ${typeof bg === "function" ? bg : bg};
 `;
 
 //Mixin de hover
-const hover = (bgColor: string |  ((props: any) => string) = primaryColor)  => css`
+const hover = (
+  bgColor: string | ((props: any) => string) = primaryColor
+) => css`
   @media (hover: hover) and (pointer: fine) {
     & {
       transition: 0.4s ease-in-out;
@@ -147,13 +149,15 @@ const modalStyle = () => css`
 `;
 
 export {
-    flex,
-    box,
-    colorBg,
-    hover,
-    active,
-    cursorNotAllowed,
-    cursorGrab,
-    cursorGrabbing,
-    modalStyle
-}
+  primaryColor,
+  secondaryColor,
+  flex,
+  box,
+  colorBg,
+  hover,
+  active,
+  cursorNotAllowed,
+  cursorGrab,
+  cursorGrabbing,
+  modalStyle,
+};
