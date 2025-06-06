@@ -17,9 +17,7 @@ const GuideRegisterContainer = styled.article`
   /*704px*/
   @media screen and (max-width: 44rem) {
     /*Registro de guías*/
-    & {
-      width: 95%;
-    }
+    width: 95%;
   }
 `;
 

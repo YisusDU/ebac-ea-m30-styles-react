@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html {
-        min-width: 19rem;
+        min-width: 19rem !Important;
     }
     body{
         font.family: ${(props) => props.theme.fonts.base}
