@@ -75,3 +75,8 @@ mixins, las animaciones y eso, pero mi componente header aun necesita:
 
 **--Estoy estilizando el componente GuideRegister, y he recordado que quizá sea mejor construir toda
 la UI antes de aplicar la lógica
+
+**--Ya estoy por empezar con la lógica general, aplicar la logica de los estilos del header 
+de cambiar de fixed a relative ha sido muy iluminador
+
+    --Para lo logica de la tabla general voy a añadir una fila que copie del navegador, depues la comentaré
