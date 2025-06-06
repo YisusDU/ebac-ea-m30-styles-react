@@ -17,7 +17,7 @@ const GuideRegisterContainer = styled.article`
   /*704px*/
   @media screen and (max-width: 44rem) {
     /*Registro de guías*/
-    .guide__register {
+    & {
       width: 95%;
     }
   }
@@ -27,7 +27,7 @@ const GuideContainer = styled.section`
   ${flex("column", "unset", "unset")};
   width: 100%;
   padding: 1.25rem;
-  h2{
+  h2 {
     font-size: 1.5rem;
   }
 `;
