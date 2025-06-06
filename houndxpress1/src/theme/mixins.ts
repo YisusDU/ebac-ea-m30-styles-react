@@ -115,7 +115,7 @@ const modalStyle = () => css`
     z-index: -1;
   }
 
-  div:nth-of-type(1) {
+  i {
     ${flex("row", "center", "flex-start")};
     ${box("100%", "0 auto", "0rem")};
 
@@ -127,13 +127,19 @@ const modalStyle = () => css`
       padding: 5px;
     }
   }
+  h3 {
+    font-size: clamp(1rem, 1.2rem, 1.5rem);
+    margin-bottom: 10px;
+  }
 
   table {
     width: 100%;
     text-align: center;
+    border-spacing: 2px;
+    border-collapse: separate;
 
     th {
-      background-color: $primaryColor;
+      background-color: ${primaryColor};
     }
 
     td {

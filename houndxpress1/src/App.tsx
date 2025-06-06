@@ -8,6 +8,8 @@ import GuideRegister from "./components/GuideReguister";
 import GeneralState from "./components/GeneralState";
 import GuideList from "./components/GuideList";
 import Footer from "./components/Footer";
+import ModalHistory from "./components/Modals/ModalHistory";
+import ModalUpdate from "./components/Modals/ModalUpdate";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
         <GuideList />
       </main>
       <Footer />
+      <ModalHistory/>
+      <ModalUpdate/>
     </ThemeProvider>
   );
 };
