@@ -57,23 +57,13 @@ const FooterSocialIcons = styled.figcaption`
   ${flex("row", "center", "space-evenly")};
   width: 100%;
 
-  i {
+  img {
     ${flex("row", "center", "center")};
     font-size: 2rem;
     cursor: pointer;
-    width: 40px;
+    width: 30px;
     ${active()};
-
-    &::before {
-      display: block;
-      width: 30px;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover::before {
-        color: ${secondaryColor};
-      }
-    }
+    ${hover(secondaryColor)}
   }
 `;
 
@@ -82,6 +72,7 @@ const FooterDescription = styled.p`
   margin: 0;
   color: #fff;
   text-align: justify;
+  line-height: normal;
 `;
 
 const FooterNavContainer = styled.section`
@@ -93,6 +84,8 @@ const FooterNavContainer = styled.section`
   .footer__title {
     margin: 0;
     padding: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
 
     &:first-of-type {
       color: ${secondaryColor};
@@ -101,15 +94,23 @@ const FooterNavContainer = styled.section`
 `;
 
 const FooterNav = styled.nav`
-  display: inline-block;
+  ${flex("row", "start", "start")};
+  ${box("100%", "0.625rem auto", "0")};
   color: #fff;
-  text-decoration: none;
-  padding: 0.625rem 0;
   text-align: center;
-  ${hover()};
+  gap: 1.5rem;
 
-  &:hover {
-    color: ${secondaryColor};
+  .footer__link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.625rem 0;
+    text-align: center;
+    ${hover()};
+
+    &:hover {
+      color: ${secondaryColor};
+    }
   }
 
   //Responsive styles

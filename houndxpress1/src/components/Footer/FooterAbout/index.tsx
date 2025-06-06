@@ -1,5 +1,8 @@
 import React from "react";
 import Logo from "../../../assets/IMG/M6-imagotipo-Hound_Express/logoAzulBlancoHE.png";
+import Facebook from "../../../assets/IMG/square-facebook-brands.svg";
+import Instagram from "../../../assets/IMG/instagram-brands.svg";
+import Twitter from "../../../assets/IMG/twitter-brands.svg";
 import {
   FooterAboutContainer,
   FooterSocialMedia,
@@ -23,9 +26,23 @@ const FooterAbout = () => {
             />
           </a>
           <FooterSocialIcons className="footer__socialIcons">
-            <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-instagram"></i>
+            <i>
+              <img
+                src={Facebook}
+                alt="facebook"
+                className="Footer__socialImg"
+              />
+            </i>
+            <i>
+              <img
+                src={Instagram}
+                alt="instagram"
+                className="Footer__socialImg"
+              />
+            </i>
+            <i>
+              <img src={Twitter} alt="twitter" className="Footer__socialImg" />
+            </i>
           </FooterSocialIcons>
         </FooterPicture>
         <FooterDescription className="footer__description">

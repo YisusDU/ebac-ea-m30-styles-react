@@ -7,6 +7,7 @@ import Banner from "./components/Banner";
 import GuideRegister from "./components/GuideReguister";
 import GeneralState from "./components/GeneralState";
 import GuideList from "./components/GuideList";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <GeneralState />
         <GuideList />
       </main>
+      <Footer />
     </ThemeProvider>
   );
 };

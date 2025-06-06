@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         scroll-behavior: smooth;
+        line-height: normal;
     }
 
     html {

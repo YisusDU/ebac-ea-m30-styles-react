@@ -1,11 +1,15 @@
 import React from "react";
+import { FooterContainer } from "./styles";
 import FooterAbout from "./FooterAbout";
+import FooterCopy from "./FooterCopy";
+
 
 const Footer = () => {
   return (
-    <footer>
+    <FooterContainer>
       <FooterAbout />
-    </footer>
+      <FooterCopy />
+    </FooterContainer>
   );
 };
 
