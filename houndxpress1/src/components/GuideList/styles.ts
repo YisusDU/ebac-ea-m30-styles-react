@@ -71,12 +71,14 @@ const TableHeader = styled.thead`
   th {
     font-size: clamp(0.9rem, 1.2rem, 1.5rem);
     vertical-align: middle;
-    padding: 10px;
+    padding: 10px 0;
+    line-height: normal;
   }
 `;
 
 const TableData = styled.td`
-  border: 0.125rem solid $secondaryColor;
+  border: 0.125rem solid ${secondaryColor};
+  vertical-align: middle;
 `;
 
 const TableButtonsContainer = styled.td`
@@ -85,6 +87,7 @@ const TableButtonsContainer = styled.td`
   color: ${primaryColor};
   text-align: center;
   gap: 1.5rem;
+  border: 0.125rem solid ${secondaryColor};
 
   .guide__button {
     ${colorBg()};

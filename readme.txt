@@ -80,3 +80,13 @@ la UI antes de aplicar la lógica
 de cambiar de fixed a relative ha sido muy iluminador
 
     --Para lo logica de la tabla general voy a añadir una fila que copie del navegador, depues la comentaré
+    Ahora estamos añadiendo una manera de hacer que la Lista de guías sea accesible desde cualqier componente
+
+//Vamos a añadir la lógica para mover las tablas con cursor grab y TS
+    ya esta la lógica para mover tablas con todo y custom hook
+
+//Ahora --> 
+    aplicar lógica al formulario
+
+
+
