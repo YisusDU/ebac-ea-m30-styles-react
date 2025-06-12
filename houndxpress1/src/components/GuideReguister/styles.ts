@@ -109,7 +109,7 @@ const GuideAnimation = styled.section`
   position: relative;
   width: 40px;
   ${flex("column", "center", "center")};
-  top: -430px;
+  top: -500px;
   gap: 1.25rem;
 
   .guide__svg {

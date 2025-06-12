@@ -14,7 +14,7 @@ const Banner = () => {
 
   //Function to listen the scroll event and change the position of the carousel
   useEffect(() => {
-    console.log("Position changed:", position);
+    /* console.log("Position changed:", position); */
   }, [position]);
 
   return (

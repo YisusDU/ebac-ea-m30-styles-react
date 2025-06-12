@@ -25,59 +25,13 @@ interface GuideStage {
 
 interface GuideListProps {
   guides: Guide[];
-  setGuides: React.Dispatch<React.SetStateAction<Guide[]>>;
 }
 
-const GuideList = ({ guides, setGuides }: GuideListProps) => {
+const GuideList = ({ guides }: GuideListProps) => {
   //Function to drag the table on scroll event
   const tableRef = useDraggTable();
 
-  /* useEffect(() => {
-    const table = tableRef.current;
-    let isDown: boolean = false;
-    let startX: number = 0;
-    let scrollLeft = 0;
-
-    const handleMouseDown = (event: MouseEvent) => {
-      event.preventDefault(); // Evita seleccionar texto
-      isDown = true;
-      if (table) {
-        startX = event.pageX - table.offsetLeft;
-        scrollLeft = table.scrollLeft;
-      }
-    };
-
-    const handleMouseUp = (event: MouseEvent) => {
-      isDown = false;
-    };
-
-    const handleMouseMove = (event: MouseEvent) => {
-      if (!isDown) return;
-      if (table) {
-        const moveX = event.pageX - table.offsetLeft;
-        const walk = (moveX - startX) * 1.5;
-        table.scrollLeft = scrollLeft - walk;
-      }
-    };
-
-    const node = tableRef.current;
-    if (node) {
-      node.addEventListener("mousedown", handleMouseDown);
-      node.addEventListener("mouseup", handleMouseUp);
-      node.addEventListener("mouseleave", handleMouseUp);
-      node.addEventListener("mousemove", handleMouseMove);
-    }
-
-    // Limpieza al desmontar el componente
-    return () => {
-      if (node) {
-        node.addEventListener("mousedown", handleMouseDown);
-        node.addEventListener("mouseup", handleMouseUp);
-        node.addEventListener("mouseleave", handleMouseUp);
-        node.addEventListener("mousemove", handleMouseMove);
-      }
-    };
-  }, []); */
+  
   return (
     /* <!--Lista de guías--> */
     <GuideListContainer className="guide__list" id="guide__list">

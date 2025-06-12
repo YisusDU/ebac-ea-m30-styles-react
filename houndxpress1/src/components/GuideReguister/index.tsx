@@ -1,5 +1,7 @@
 import React from "react";
-import Paws from "../../assets/IMG/paw-solid.svg"
+import Paws from "../../assets/IMG/paw-solid.svg";
+import { useGuideRegister } from "../../hooks/useGuideRegister";
+import { GuideListProps } from "./types";
 import {
   GuideRegisterContainer,
   GuideContainer,
@@ -8,13 +10,29 @@ import {
   GuideAnimation,
 } from "./styles";
 
-const GuideRegister = () => {
+const GuideRegister = ({ guides, setGuides }: GuideListProps) => {
+  const { errors, handleValidate, setErrors } = useGuideRegister(
+    guides,
+    setGuides
+  );
+
+  //Clean errors at try it again
+
+  const cleanErrorOnFocus = (
+    e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const name = e.target.name;
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
   return (
     <GuideRegisterContainer className="guide__register" id="guide__register">
       {/* <!--Formulario--> */}
       <GuideContainer className="guide__container">
         <h2 className="guide__title">Registro de guías</h2>
-        <GuideForm className="guide__form" action="#">
+        <GuideForm className="guide__form" action="#" onSubmit={handleValidate}>
           <label className="guide__form--label" htmlFor="guide__number">
             Número de guía:
           </label>
@@ -28,8 +46,9 @@ const GuideRegister = () => {
             maxLength={8}
             placeholder="Número de guía:"
             title="Añade un número de guía de máximo 8 caracteres"
+            onFocus={cleanErrorOnFocus}
           />
-          <span className="error-message"></span>
+          <span className="error-message">{errors.guide__number}</span>
 
           <label className="guide__form--label" htmlFor="guide__origin">
             Origen:
@@ -42,8 +61,9 @@ const GuideRegister = () => {
             maxLength={30}
             placeholder="Origen:"
             title="Añade la ciudad de origen"
+            onFocus={cleanErrorOnFocus}
           />
-          <span className="error-message"></span>
+          <span className="error-message">{errors.guide__origin}</span>
 
           <label className="guide__form--label" htmlFor="guide__destination">
             Destino:
@@ -56,8 +76,9 @@ const GuideRegister = () => {
             maxLength={30}
             placeholder="Destino:"
             title="Añade la ciudad de destino"
+            onFocus={cleanErrorOnFocus}
           />
-          <span className="error-message"></span>
+          <span className="error-message">{errors.guide__destination}</span>
 
           <label className="guide__form--label" htmlFor="guide__recipient">
             Destinatario:
@@ -70,8 +91,9 @@ const GuideRegister = () => {
             maxLength={30}
             placeholder="Destinatario:"
             title="Añade el nombre y apellido del destinatario"
+            onFocus={cleanErrorOnFocus}
           />
-          <span className="error-message"></span>
+          <span className="error-message">{errors.guide__recipient}</span>
 
           <label className="guide__form--label" htmlFor="guide__date">
             Fecha de creación:
@@ -83,8 +105,9 @@ const GuideRegister = () => {
             type="date"
             placeholder="Fecha de creación:"
             title="Añade la fecha de creación en el formato que se indica"
+            onFocus={cleanErrorOnFocus}
           />
-          <span className="error-message"></span>
+          <span className="error-message">{errors.guide__date}</span>
 
           <label className="guide__form--label" htmlFor="guide__hour">
             Hora de creación:
@@ -96,8 +119,9 @@ const GuideRegister = () => {
             type="time"
             placeholder="Hora de creación:"
             title="Añade la hora de creación"
+            onFocus={cleanErrorOnFocus}
           />
-          <span className="error-message"></span>
+          <span className="error-message">{errors.guide__hour}</span>
 
           <label className="guide__form--label" htmlFor="guide__status">
             Estado inicial:
@@ -107,6 +131,7 @@ const GuideRegister = () => {
             id="guide__status"
             name="guide__status"
             title="Selecciona el estado inicial del envío"
+            onFocus={cleanErrorOnFocus}
           >
             <option className="guide__form--option " value="">
               Estado inicial:
@@ -121,7 +146,7 @@ const GuideRegister = () => {
               Entregado ✅
             </option>
           </select>
-          <span className="error-message"></span>
+          <span className="error-message">{errors.guide__status}</span>
           <br />
           <GuideSubmit className="guide__form--submit" type="submit">
             Enviar
@@ -131,31 +156,19 @@ const GuideRegister = () => {
 
       {/* <!--Animacion--> */}
       <GuideAnimation className="guide__animation">
-        <img
-          className="guide__svg guide__svg--left"
-          src={Paws}
-          alt="paw-svg"
-        />
+        <img className="guide__svg guide__svg--left" src={Paws} alt="paw-svg" />
         <img
           className="guide__svg guide__svg--right"
           src={Paws}
           alt="paw-svg"
         />
-        <img
-          className="guide__svg guide__svg--left"
-          src={Paws}
-          alt="paw-svg"
-        />
+        <img className="guide__svg guide__svg--left" src={Paws} alt="paw-svg" />
         <img
           className="guide__svg guide__svg--right"
           src={Paws}
           alt="paw-svg"
         />
-        <img
-          className="guide__svg guide__svg--left"
-          src={Paws}
-          alt="paw-svg"
-        />
+        <img className="guide__svg guide__svg--left" src={Paws} alt="paw-svg" />
       </GuideAnimation>
     </GuideRegisterContainer>
   );
