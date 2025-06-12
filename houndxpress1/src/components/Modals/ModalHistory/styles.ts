@@ -1,12 +1,55 @@
 import styled from "styled-components";
-import { modalStyle } from "../../../theme/mixins";
+import { modalStyle, box, flex } from "../../../theme/mixins";
 
 const ModalHistoryContainer = styled.section`
   ${modalStyle()};
-  
+
   &.hiddeModal {
     scale: 0;
   }
 `;
 
-export { ModalHistoryContainer };
+const ModalHistoryPath = styled.section`
+  ${flex("row", "start", "center")}
+  ${box("100%", "0.5rem", "0")};
+  gap: 7px;
+`;
+
+const ModalSVGContainer = styled.section`
+  ${box("1%", "0.5rem", "0")};
+
+  img {
+    width: 1.5rem;
+  }
+`;
+
+const ModalPathContent = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  ${box("100%", "0.5rem", "0")};
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &.status--pending {
+      color: orange;
+    }
+
+    &.status--transit {
+      color: yellow;
+    }
+
+    &.status--delivered {
+      color: green;
+    }
+  }
+`;
+
+export {
+  ModalHistoryContainer,
+  ModalHistoryPath,
+  ModalPathContent,
+  ModalSVGContainer,
+};

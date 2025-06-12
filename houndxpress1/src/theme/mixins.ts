@@ -101,6 +101,7 @@ const modalStyle = () => css`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 20;
+  border: solid 1px #ffffff;
 
   .tableModal__container {
     width: 100%;

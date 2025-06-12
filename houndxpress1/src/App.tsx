@@ -17,6 +17,7 @@ const App = () => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const headerRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+  const [modalData,setModalData] = useState<string>("87654321")
   const [guides, setGuides] = useState<Guide[]>([
     {
       guide__number: "12345678",
@@ -32,7 +33,7 @@ const App = () => {
       ],
     },
     {
-      guide__number: "12345",
+      guide__number: "87654321",
       guide__origin: "Ciudad A",
       guide__destination: "Ciudad B",
       guide__recipient: "Persona X",
@@ -97,7 +98,6 @@ const App = () => {
     }
   }, [headerHeight]);
 
-  //Function to read and set the guideList Array
 
   return (
     <ThemeProvider theme={Theme}>
@@ -110,7 +110,7 @@ const App = () => {
         <GuideList guides={guides} />
       </main>
       <Footer />
-      <ModalHistory />
+      <ModalHistory modalData={modalData} guides={guides}/>
       <ModalUpdate />
     </ThemeProvider>
   );
