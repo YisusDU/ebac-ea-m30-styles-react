@@ -86,7 +86,10 @@ de cambiar de fixed a relative ha sido muy iluminador
     ya esta la lógica para mover tablas con todo y custom hook
 
 //Ahora --> 
-    aplicar lógica al formulario
+    aplicar lógica al formulario ✅
+    aplicar logica al modal history
+    aplicar logica al modal update
+    aplicar logica a General state
 
 
 

@@ -105,8 +105,8 @@ const App = () => {
       <Header ref={headerRef} menuDisplay={menuDisplay} />
       <main ref={mainRef}>
         <Banner />
-        <GuideRegister guides={guides} setGuides={setGuides}/>
-        <GeneralState />
+        <GuideRegister guides={guides} setGuides={setGuides} />
+        <GeneralState guides={guides} />
         <GuideList guides={guides} />
       </main>
       <Footer />
