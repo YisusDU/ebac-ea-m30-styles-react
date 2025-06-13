@@ -9,23 +9,24 @@ import {
   GuideSubmit,
   GuideAnimation,
 } from "./styles";
+import { useCleanErrorOnFocus } from "../../hooks/useCleanErrorOnFocus";
 
 const GuideRegister = ({ guides, setGuides }: GuideListProps) => {
   const { errors, handleValidate, setErrors } = useGuideRegister(
     guides,
     setGuides
   );
+  const cleanErrorOnFocus = useCleanErrorOnFocus(errors, setErrors);
 
-  //Clean errors at try it again
-
-  const cleanErrorOnFocus = (
+  /* //Clean errors at try it again
+  const useCleanErrorOnFocus = (
     e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const name = e.target.name;
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  };
+  }; */
 
   return (
     <GuideRegisterContainer className="guide__register" id="guide__register">

@@ -34,7 +34,7 @@ const GuideList = ({
   setIsOpenModal,
   setModalData,
 }: GuideListProps) => {
-  //Function to drag the table on scroll event
+  //Function to dragg the table on scroll, it needs styles of overflow
   const tableRef = useDraggTable();
 
   type ModalType = "History" | "Update";

@@ -11,7 +11,10 @@ const validateFields = (
     }
   });
   setErrors(newErrors);
-  return Object.keys(newErrors).length === 0;
+
+  return {
+    isValid: Object.keys(newErrors).length === 0,
+  };
 };
 
 export default validateFields;

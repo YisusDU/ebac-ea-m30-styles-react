@@ -10,6 +10,7 @@ import {
   ModalFormSubmit,
   ModalMessage,
 } from "./styles";
+import { useCleanErrorOnFocus } from "../../../../hooks/useCleanErrorOnFocus";
 
 interface TypesUpdateForm {
   guideIndex: number;
@@ -22,15 +23,15 @@ const UpdateForm = ({
   currentGuide,
   setGuides,
 }: TypesUpdateForm) => {
-  const { handleValidate, errors } = useUpdateForm(
+  const { handleValidate, errors, setErrors } = useUpdateForm(
     guideIndex,
     currentGuide,
     setGuides
   );
   /* useEffect(()=> {
-
     console.log("currentGuideUpdate", currentGuide)
   }) */
+  const clearErrosOnFocus = useCleanErrorOnFocus(errors, setErrors);
 
   return (
     <ModalUpdateContainer>
@@ -50,6 +51,7 @@ const UpdateForm = ({
             id="guide__newStatus"
             name="guide__status"
             title="Selecciona el estado actuaizado del envío"
+            onFocus={clearErrosOnFocus}
           >
             <option className="tableModal__form--option option--1" value="">
               Nuevo estado:
@@ -80,6 +82,7 @@ const UpdateForm = ({
             type="date"
             placeholder="Fecha de creación:"
             title="Añade la fecha de creación en el formato que se indica"
+            onFocus={clearErrosOnFocus}
           />
           <span className="error-message">{errors.guide__date}</span>
 
@@ -93,6 +96,7 @@ const UpdateForm = ({
             type="time"
             placeholder="Hora de actualización:"
             title="Añade la hora de la actualización"
+            onFocus={clearErrosOnFocus}
           />
           <span className="error-message">{errors.guide__hour}</span>
           <br />

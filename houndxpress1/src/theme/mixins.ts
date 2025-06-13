@@ -94,6 +94,7 @@ const cursorGrabbing = () => css`
 const modalStyle = () => css`
   ${flex("column", "center", "space-evenly")};
   ${box("80dvw", "0 auto", "1rem")};
+  min-width: 19rem !important;
   ${colorBg("#fff", secondaryColor)}
   transition: all .1s ease-in-out;
   position: fixed;
@@ -111,6 +112,7 @@ const modalStyle = () => css`
     content: "";
     position: absolute;
     width: 100dvw;
+    min-width: 19rem !important;
     height: 100dvh;
     background-color: rgb(0 0 0 / 8%);
     z-index: -1;

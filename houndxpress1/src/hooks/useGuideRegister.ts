@@ -41,11 +41,11 @@ const useGuideRegister = (
       "guide__status",
     ];
 
-    const validForm = validateFields(requiredFields, formData, setErrors);
+    const { isValid } = validateFields(requiredFields, formData, setErrors);
 
     //Validate if the form is valid to go ahead
     // console.log("Formulario válido:", validForm ? "true" : "false");
-    if (!validForm) {
+    if (!isValid) {
       e.preventDefault();
       return;
     }

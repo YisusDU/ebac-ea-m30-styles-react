@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { cursorGrab, cursorGrabbing } from "../../../../theme/mixins";
+import { sizesMedia } from "../../../../theme/variables";
 
 const UpdateTableContainer = styled.section`
   position: relative;
@@ -8,6 +10,15 @@ const UpdateTableContainer = styled.section`
 
   &::after {
     display: none;
+  }
+
+  //Responsive styles
+  @media screen and (max-width: ${sizesMedia.sm}) {
+    width:100%;
+    overflow-x: scroll;
+    ${cursorGrab()};
+    ${cursorGrabbing()};
+    
   }
 `;
 

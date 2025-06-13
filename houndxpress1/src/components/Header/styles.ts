@@ -1,18 +1,7 @@
 import styled from "styled-components";
 import { shine } from "../../theme/animations";
 import { flex, box, hover, active } from "../../theme/mixins";
-
-const primaryColor = (props: any) => props.theme.colors.primaryColor;
-const secondaryColor = (props: any) => props.theme.colors.secondaryColor;
-
-const sizesMedia = {
-  xl: "69rem", //1104px
-  lg: "61rem", //976px
-  xmd: "52.5rem", //840px
-  md: "48rem", //768px
-  sm: "44rem", //704px
-  xsm: "33rem", //528px
-};
+import { primaryColor, secondaryColor, sizesMedia } from "../../theme/variables";
 
 const HeaderContainer = styled.header`
   ${flex("column", "start", "center")};

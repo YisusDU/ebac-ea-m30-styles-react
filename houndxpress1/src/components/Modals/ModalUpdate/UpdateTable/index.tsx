@@ -1,6 +1,7 @@
 import React from "react";
 import { Guide } from "../../../GuideReguister/types";
 import { UpdateTableContainer } from "./styles";
+import useDraggTable from "../../../../hooks/useDraggTable";
 
 export interface UpdateGuide {
   guideIndex: number;
@@ -8,9 +9,11 @@ export interface UpdateGuide {
 }
 
 const UpdateTable = ({ guideIndex, currentGuide }: UpdateGuide) => {
+  //Function to dragg the table on scroll, it needs styles of overflow
+  const tableRef = useDraggTable();
+
   return (
-    <UpdateTableContainer>
-      <div className="tableModal__container">
+    <UpdateTableContainer ref={tableRef}>
         <table className="table__currentGuide">
           <thead className="table__currentGuide--header">
             <tr className="table__modalUptade--row">
@@ -61,7 +64,6 @@ const UpdateTable = ({ guideIndex, currentGuide }: UpdateGuide) => {
             )}
           </tbody>
         </table>
-      </div>
     </UpdateTableContainer>
   );
 };

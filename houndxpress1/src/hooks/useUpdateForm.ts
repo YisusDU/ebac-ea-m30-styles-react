@@ -18,10 +18,10 @@ const useUpdateForm = (
 
     //validate all the fields empty
     const requiredFields = ["guide__date", "guide__hour", "guide__status"];
-    const validForm = validateFields(requiredFields, formData, setErrors);
+    const { isValid } = validateFields(requiredFields, formData, setErrors);
 
     // console.log("Formulario válido:", validForm ? "true" : "false");
-    if (!validForm) {
+    if (!isValid) {
       e.preventDefault();
       return;
     }
@@ -48,7 +48,7 @@ const useUpdateForm = (
     //clean the form
     form.reset();
   };
-  return { handleValidate, errors };
+  return { handleValidate, errors, setErrors };
 };
 
 export { useUpdateForm };
