@@ -1,11 +1,14 @@
 import React, { SetStateAction } from "react";
 import { Guide } from "../../../GuideReguister/types";
+import { useUpdateForm } from "../../../../hooks/useUpdateForm";
 import {
   ModalUpdateContainer,
   ModalForm,
   ModalSelect,
+  ModalOptionSelect,
   ModalInput,
   ModalFormSubmit,
+  ModalMessage,
 } from "./styles";
 
 interface TypesUpdateForm {
@@ -19,65 +22,92 @@ const UpdateForm = ({
   currentGuide,
   setGuides,
 }: TypesUpdateForm) => {
+  const { handleValidate, errors } = useUpdateForm(
+    guideIndex,
+    currentGuide,
+    setGuides
+  );
+  /* useEffect(()=> {
+
+    console.log("currentGuideUpdate", currentGuide)
+  }) */
+
   return (
     <ModalUpdateContainer>
-      <ModalForm action="#" className="tableModal__form">
-        <label className="table__form--label" htmlFor="guide__newStatus">
-          Nuevo estado:
-        </label>
-        <ModalSelect
-          className="tableModal__form--select tableModal__input"
-          id="guide__newStatus"
-          name="guide__status"
-          title="Selecciona el estado actuaizado del envío"
+      {!currentGuide?.guide__stage
+        ?.at(-1)
+        ?.guide__status?.includes("Entregado") && (
+        <ModalForm
+          action="#"
+          className="tableModal__form"
+          onSubmit={handleValidate}
         >
-          <option className="tableModal__form--option option--1" value="">
+          <label className="table__form--label" htmlFor="guide__newStatus">
             Nuevo estado:
-          </option>
-          <option
-            className="tableModal__form--option option--2"
-            value="En tránsito"
+          </label>
+          <ModalSelect
+            className="tableModal__form--select tableModal__input"
+            id="guide__newStatus"
+            name="guide__status"
+            title="Selecciona el estado actuaizado del envío"
           >
-            En tránsito 🚚
-          </option>
-          <option
-            className="tableModal__form--option option--3"
-            value="Entregado"
-          >
-            Entregado ✅
-          </option>
-        </ModalSelect>
-        <span className="error-message"></span>
+            <option className="tableModal__form--option option--1" value="">
+              Nuevo estado:
+            </option>
+            <ModalOptionSelect
+              className="tableModal__form--option option--2"
+              value="En tránsito"
+              $state={String(currentGuide?.guide__stage.at(-1)?.guide__status)}
+            >
+              En tránsito 🚚
+            </ModalOptionSelect>
+            <option
+              className="tableModal__form--option option--3"
+              value="Entregado"
+            >
+              Entregado ✅
+            </option>
+          </ModalSelect>
+          <span className="error-message">{errors.guide__status}</span>
 
-        <label className="table__form--label" htmlFor="guide__newDate">
-          Fecha de la última actualización:
-        </label>
-        <ModalInput
-          className="tableModal__form--input tableModal__input"
-          id="guide__newDate"
-          name="guide__date"
-          type="date"
-          placeholder="Fecha de creación:"
-          title="Añade la fecha de creación en el formato que se indica"
-        />
-        <span className="error-message"></span>
-        <label className="table__form--label" htmlFor="guide__hour">
-          Hora de la última actualización:
-        </label>
-        <ModalInput
-          className="tableModal__form--input tableModal__input"
-          id="guide__newTime"
-          name="guide__hour"
-          type="time"
-          placeholder="Hora de actualización:"
-          title="Añade la hora de la actualización"
-        />
-        <span className="error-message"></span>
-        <br />
-        <ModalFormSubmit className="tableModal__form--submit" type="submit">
-          Actualizar
-        </ModalFormSubmit>
-      </ModalForm>
+          <label className="table__form--label" htmlFor="guide__date">
+            Fecha de la última actualización:
+          </label>
+          <ModalInput
+            className="tableModal__form--input tableModal__input"
+            id="guide__newDate"
+            name="guide__date"
+            type="date"
+            placeholder="Fecha de creación:"
+            title="Añade la fecha de creación en el formato que se indica"
+          />
+          <span className="error-message">{errors.guide__date}</span>
+
+          <label className="table__form--label" htmlFor="guide__hour">
+            Hora de la última actualización:
+          </label>
+          <ModalInput
+            className="tableModal__form--input tableModal__input"
+            id="guide__newTime"
+            name="guide__hour"
+            type="time"
+            placeholder="Hora de actualización:"
+            title="Añade la hora de la actualización"
+          />
+          <span className="error-message">{errors.guide__hour}</span>
+          <br />
+          <ModalFormSubmit className="tableModal__form--submit" type="submit">
+            Actualizar
+          </ModalFormSubmit>
+        </ModalForm>
+      )}
+      {currentGuide?.guide__stage
+        ?.at(-1)
+        ?.guide__status?.includes("Entregado") && (
+        <ModalMessage>
+          *Tu envío ya fue entregado, no es posible actualizar su estado*
+        </ModalMessage>
+      )}
     </ModalUpdateContainer>
   );
 };

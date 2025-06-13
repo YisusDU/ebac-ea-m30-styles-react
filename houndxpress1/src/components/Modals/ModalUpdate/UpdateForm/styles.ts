@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import {
-  modalStyle,
   flex,
   box,
   colorBg,
@@ -9,6 +8,10 @@ import {
   hover,
   active,
 } from "../../../../theme/mixins";
+
+interface StageProp {
+  $state?: string;
+}
 
 const ModalInpuSelect = () => css`
   width: 95%;
@@ -56,7 +59,7 @@ const ModalForm = styled.form`
   border: 2px solid ${primaryColor};
   gap: 0.3rem;
 
-  .table__form--label {
+  .table__form--label:nth-of-type(1) {
     display: none;
   }
 
@@ -69,11 +72,19 @@ const ModalForm = styled.form`
     color: red;
     margin: 0;
     padding: 0;
+    margin-bottom: 15px;
   }
 `;
 
 const ModalSelect = styled.select`
   ${ModalInpuSelect()};
+`;
+
+const ModalOptionSelect = styled.option<StageProp>`
+  display: ${(props) => {
+    if (props.$state?.includes("En tránsito")) return "none";
+    return "flex";
+  }};
 `;
 
 const ModalInput = styled.input`
@@ -93,10 +104,18 @@ const ModalFormSubmit = styled.button`
   ${active()}
 `;
 
+const ModalMessage = styled.h3`
+ text-align: center;
+ margin: 10px;
+ font-weight: bold;
+`;
+
 export {
   ModalUpdateContainer,
   ModalForm,
   ModalSelect,
+  ModalOptionSelect,
   ModalInput,
   ModalFormSubmit,
+  ModalMessage,
 };
