@@ -94,6 +94,7 @@ const GuideList = ({
                   <button
                     className="guide__button guide__button--updateState"
                     onClick={() => openModal(g.guide__number, "Update")}
+                    type="button"
                   >
                     Actualizar Estado
                   </button>

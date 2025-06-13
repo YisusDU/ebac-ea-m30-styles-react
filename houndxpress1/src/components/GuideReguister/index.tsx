@@ -18,15 +18,12 @@ const GuideRegister = ({ guides, setGuides }: GuideListProps) => {
   );
   const cleanErrorOnFocus = useCleanErrorOnFocus(errors, setErrors);
 
-  /* //Clean errors at try it again
-  const useCleanErrorOnFocus = (
-    e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const name = e.target.name;
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
-    }
-  }; */
+  //----Funcion para limitar el input de fecha a la fecha actual
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  const formattedDate = `${year}-${month}-${day}`;
 
   return (
     <GuideRegisterContainer className="guide__register" id="guide__register">
@@ -107,6 +104,7 @@ const GuideRegister = ({ guides, setGuides }: GuideListProps) => {
             placeholder="Fecha de creación:"
             title="Añade la fecha de creación en el formato que se indica"
             onFocus={cleanErrorOnFocus}
+            max={formattedDate}
           />
           <span className="error-message">{errors.guide__date}</span>
 
@@ -115,7 +113,7 @@ const GuideRegister = ({ guides, setGuides }: GuideListProps) => {
           </label>
           <input
             className="guide__form--input"
-            id="guide__time"
+            id="guide__hour"
             name="guide__hour"
             type="time"
             placeholder="Hora de creación:"

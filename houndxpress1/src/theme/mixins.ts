@@ -1,7 +1,5 @@
 import { css } from "styled-components";
-
-const secondaryColor = (props: any) => props.theme.colors.secondaryColor;
-const primaryColor = (props: any) => props.theme.colors.primaryColor;
+import { primaryColor, secondaryColor } from "./variables";
 
 //mixins
 const flex = (

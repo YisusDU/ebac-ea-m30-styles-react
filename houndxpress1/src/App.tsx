@@ -34,7 +34,7 @@ const App = () => {
       ],
     },
     {
-      guide__number: "87654321",
+      guide__number: "12345",
       guide__origin: "Ciudad A",
       guide__destination: "Ciudad B",
       guide__recipient: "Persona X",
@@ -48,6 +48,60 @@ const App = () => {
           guide__date: "2023-10-02",
           guide__status: "En tránsito",
           guide__hour: "17:42",
+        },
+      ],
+    },
+    {
+      guide__number: "67890",
+      guide__origin: "Ciudad C",
+      guide__destination: "Ciudad D",
+      guide__recipient: "Persona Y",
+      guide__stage: [
+        {
+          guide__date: "2023-10-01",
+          guide__status: "Pendiente",
+          guide__hour: "08:23",
+        },
+        {
+          guide__date: "2023-10-02",
+          guide__status: "En tránsito",
+          guide__hour: "19:08",
+        },
+      ],
+    },
+    {
+      guide__number: "54321",
+      guide__origin: "Ciudad E",
+      guide__destination: "Ciudad F",
+      guide__recipient: "Persona Z",
+      guide__stage: [
+        {
+          guide__date: "2023-09-28",
+          guide__status: "Pendiente",
+          guide__hour: "10:55",
+        },
+        {
+          guide__date: "2023-09-29",
+          guide__status: "En tránsito",
+          guide__hour: "14:27",
+        },
+        {
+          guide__date: "2023-09-30",
+          guide__status: "Entregado",
+          guide__hour: "18:36",
+        },
+      ],
+    },
+    {
+      guide__number: "98765",
+      guide__origin: "Ciudad G",
+      guide__destination: "Ciudad H",
+      guide__recipient: "Persona N",
+      guide__stage: [
+        {
+          guide__date: "2023-10-03",
+          guide__status: "Pendiente",
+          guide__hour: "15:02",
         },
       ],
     },

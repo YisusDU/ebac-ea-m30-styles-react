@@ -92,6 +92,7 @@ de cambiar de fixed a relative ha sido muy iluminador
     aplicar logica a General state✅
     aplicar logica de arrastrar tabla a ambos modales
      y estilos responsivos✅
+     ultimos detalles✅
 
 
 

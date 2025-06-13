@@ -31,7 +31,15 @@ const UpdateForm = ({
   /* useEffect(()=> {
     console.log("currentGuideUpdate", currentGuide)
   }) */
+  //Function to clear errors on focus
   const clearErrosOnFocus = useCleanErrorOnFocus(errors, setErrors);
+
+  //----Funcion para limitar el input de fecha a la fecha actual
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  const formattedDate = `${year}-${month}-${day}`;
 
   return (
     <ModalUpdateContainer>
@@ -83,15 +91,16 @@ const UpdateForm = ({
             placeholder="Fecha de creación:"
             title="Añade la fecha de creación en el formato que se indica"
             onFocus={clearErrosOnFocus}
+            max={formattedDate}
           />
           <span className="error-message">{errors.guide__date}</span>
 
-          <label className="table__form--label" htmlFor="guide__hour">
+          <label className="table__form--label" htmlFor="guide__hourUpdated">
             Hora de la última actualización:
           </label>
           <ModalInput
             className="tableModal__form--input tableModal__input"
-            id="guide__newTime"
+            id="guide__hourUpdated"
             name="guide__hour"
             type="time"
             placeholder="Hora de actualización:"

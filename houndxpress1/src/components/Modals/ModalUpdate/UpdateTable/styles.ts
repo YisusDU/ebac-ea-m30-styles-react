@@ -13,7 +13,7 @@ const UpdateTableContainer = styled.section`
   }
 
   //Responsive styles
-  @media screen and (max-width: ${sizesMedia.sm}) {
+  @media screen and (max-width: ${sizesMedia.md}) {
     width:100%;
     overflow-x: scroll;
     ${cursorGrab()};

@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { pawsDown } from "../../theme/animations";
 import { flex, box, colorBg, hover, active } from "../../theme/mixins";
+import { primaryColor, secondaryColor } from "../../theme/variables";
 
-const primaryColor = (props: any) => props.theme.colors.primaryColor;
-const secondaryColor = (props: any) => props.theme.colors.secondaryColor;
 
 //-- Forms
 

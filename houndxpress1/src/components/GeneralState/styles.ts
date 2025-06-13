@@ -1,17 +1,7 @@
 import styled from "styled-components";
 import { flex, box, colorBg } from "../../theme/mixins";
 import { shine } from "../../theme/animations";
-
-const secondaryColor = (props: any) => props.theme.colors.secondaryColor;
-
-const sizesMedia = {
-  xl: "69rem", //1104px
-  lg: "61rem", //960px
-  xmd: "52.5rem", //840px
-  md: "48rem", //768px
-  sm: "44rem", //704px
-  xsm: "33rem", //528px
-};
+import { sizesMedia, secondaryColor } from "../../theme/variables";
 
 const GeneralStateContainer = styled.article`
   ${flex("rrow", "center", "space-between")};

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Gift from "../../assets/IMG/Animacion-beneficios-sistema-v2.gif";
 import { Guide } from "../GuideReguister/types";
 import {
   GeneralStateContainer,
@@ -71,11 +72,7 @@ const GeneralState = ({ guides }: GuideListProps) => {
         </StateElement>
       </StateContainer>
       <StatePicture className="state__picture">
-        <img
-          className="state__img"
-          src="https://www.hound-express.com/images/Animacion-beneficios-sistema-v2.gif"
-          alt="hx__gift"
-        />
+        <img className="state__img" src={Gift} alt="hx__gift" />
       </StatePicture>
     </GeneralStateContainer>
   );

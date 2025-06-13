@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { flex, hover, active, cursorNotAllowed } from "../../theme/mixins";
+import { secondaryColor } from "../../theme/variables";
 
 interface CheckedProps {
   $position: "left" | "right";
 }
-
-const secondaryColor = (props: any) => props.theme.colors.secondaryColor;
 
 const BannerContainer = styled.article`
   width: 100%;
@@ -46,7 +45,7 @@ const CarouselImages = styled.section<CheckedProps>`
       background-repeat: no-repeat;
       background-position: center;
       padding: 0.625rem;
-    //   object-fit: contain;
+      //   object-fit: contain;
     }
   }
 `;
@@ -59,7 +58,7 @@ const CarouselNav = styled.section<CheckedProps>`
   margin-top: 0.625rem;
   height: max-content;
 
-  label {
+  div {
     cursor: pointer;
     padding: 0.3125rem;
     background-color: #8ab5c1;

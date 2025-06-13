@@ -38,12 +38,8 @@ const Banner = () => {
           </article>
         </CarouselImages>
         <CarouselNav className="carousel__nav" $position={position}>
-          <label htmlFor="slide1" onClick={() => setPosition("left")}>
-            ⬅️
-          </label>
-          <label htmlFor="slide2" onClick={() => setPosition("right")}>
-            ➡️
-          </label>
+          <div onClick={() => setPosition("left")}>⬅️</div>
+          <div onClick={() => setPosition("right")}>➡️</div>
         </CarouselNav>
       </CarouselContainer>
     </BannerContainer>
