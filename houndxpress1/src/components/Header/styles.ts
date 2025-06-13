@@ -195,15 +195,15 @@ const HeaderLinksContainer = styled.div`
       padding: 15px 25px;
 
       &:nth-of-type(6) {
-        background-color: $primaryColor;
-        @include hover($secondaryColor);
+        background-color: ${primaryColor};
+        @include hover(${secondaryColor});
       }
     }
 
     .header__lineDecorative {
       padding: 1rem;
       width: 100%;
-      background-color: $secondaryColor;
+      background-color: ${secondaryColor};
     }
   }
 `;
