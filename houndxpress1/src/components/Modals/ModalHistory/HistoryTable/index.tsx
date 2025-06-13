@@ -1,12 +1,12 @@
 import React from "react";
 import { Guide } from "../../../GuideReguister/types";
 
- export interface HistoryGuide {
-    guideIndex: number,
-    currentGuide: Guide | undefined,
+export interface HistoryGuide {
+  guideIndex: number;
+  currentGuide: Guide ;
 }
 
-const HistoryTable = ({guideIndex, currentGuide}: HistoryGuide) => {
+const HistoryTable = ({ guideIndex, currentGuide }: HistoryGuide) => {
   return (
     <table className="tableHistory__currentGuide">
       <thead className="tableHistory__currentGuide--header">
@@ -19,7 +19,7 @@ const HistoryTable = ({guideIndex, currentGuide}: HistoryGuide) => {
         </tr>
       </thead>
       <tbody className="tableHistory__currentGuide--body">
-        {guideIndex && currentGuide ? (
+        {guideIndex!== -1 && currentGuide  ? (
           <tr>
             <td>{currentGuide.guide__number}</td>
             <td>
@@ -33,7 +33,9 @@ const HistoryTable = ({guideIndex, currentGuide}: HistoryGuide) => {
             <td>{currentGuide.guide__recipient}</td>
           </tr>
         ) : (
-          <td>No hay valores para mostrar</td>
+          <tr>
+            <td>No hay valores para mostrar</td>
+          </tr>
         )}
       </tbody>
     </table>
@@ -41,4 +43,3 @@ const HistoryTable = ({guideIndex, currentGuide}: HistoryGuide) => {
 };
 
 export default HistoryTable;
-

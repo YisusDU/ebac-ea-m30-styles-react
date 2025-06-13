@@ -1,5 +1,5 @@
-import React from "react";
-import ModalHistory from "../../ModalHistory";
+import React, { SetStateAction } from "react";
+import { Guide } from "../../../GuideReguister/types";
 import {
   ModalUpdateContainer,
   ModalForm,
@@ -8,7 +8,17 @@ import {
   ModalFormSubmit,
 } from "./styles";
 
-const UpdateForm = () => {
+interface TypesUpdateForm {
+  guideIndex: number;
+  currentGuide: Guide;
+  setGuides: React.Dispatch<SetStateAction<Guide[]>>;
+}
+
+const UpdateForm = ({
+  guideIndex,
+  currentGuide,
+  setGuides,
+}: TypesUpdateForm) => {
   return (
     <ModalUpdateContainer>
       <ModalForm action="#" className="tableModal__form">

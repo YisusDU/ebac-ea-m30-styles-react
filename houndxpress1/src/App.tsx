@@ -17,7 +17,8 @@ const App = () => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const headerRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
-  const [modalData,setModalData] = useState<string>("87654321")
+  const [modalData, setModalData] = useState<string>("");
+  const [isOpenModal, setIsOpenModal] = useState<"Update" | "History" | "">("");
   const [guides, setGuides] = useState<Guide[]>([
     {
       guide__number: "12345678",
@@ -98,7 +99,6 @@ const App = () => {
     }
   }, [headerHeight]);
 
-
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
@@ -107,11 +107,28 @@ const App = () => {
         <Banner />
         <GuideRegister guides={guides} setGuides={setGuides} />
         <GeneralState guides={guides} />
-        <GuideList guides={guides} setModalData={setModalData}/>
+        <GuideList
+          guides={guides}
+          setModalData={setModalData}
+          setIsOpenModal={setIsOpenModal}
+        />
       </main>
       <Footer />
-      <ModalHistory modalData={modalData} guides={guides}/>
-      <ModalUpdate />
+      <ModalHistory
+        setModalData={setModalData}
+        modalData={modalData}
+        guides={guides}
+        isOpenModal={isOpenModal}
+        setIsOpenModal={setIsOpenModal}
+      />
+      <ModalUpdate
+        setModalData={setModalData}
+        modalData={modalData}
+        guides={guides}
+        setGuides={setGuides}
+        isOpenModal={isOpenModal}
+        setIsOpenModal={setIsOpenModal}
+      />
     </ThemeProvider>
   );
 };

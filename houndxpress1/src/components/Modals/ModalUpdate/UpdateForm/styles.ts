@@ -38,7 +38,7 @@ const ModalInpuSelect = () => css`
 `;
 
 const ModalUpdateContainer = styled.section`
-  ${modalStyle()};
+  width: 100%;
   position: relative;
   transform: translate(0);
   top: 0;

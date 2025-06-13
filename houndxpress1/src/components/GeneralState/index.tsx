@@ -38,10 +38,10 @@ const GeneralState = ({ guides }: GuideListProps) => {
     const transit = guides.length - delivered - pending;
 
     // Ahora sí, los logs mostrarán los valores correctos
-    console.log("guías activas", active);
+    /* console.log("guías activas", active);
     console.log("guías entregadas", delivered);
     console.log("guías pendientes", pending);
-    console.log("guías en tránsito", transit);
+    console.log("guías en tránsito", transit); */
 
     setGuideActive(active);
     setGuideDelivered(delivered);

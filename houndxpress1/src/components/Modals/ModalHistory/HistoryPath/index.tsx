@@ -13,7 +13,7 @@ const HistoryPath = ({ guideIndex, currentGuide }: HistoryGuide) => {
       {/* Dinamics paths of following  */}
       {guideIndex !== -1 &&
       currentGuide &&
-      currentGuide.guide__stage.length > 0 ? (
+      currentGuide.guide__stage?.length >= 1 ? (
         <>
           {currentGuide?.guide__stage.map((stage, idx) => (
             <ModalHistoryPath key={idx}>

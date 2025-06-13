@@ -1,14 +1,15 @@
 import React from "react";
-import XIcon from "../../../../assets/IMG/x-solid.svg"
-import { UpdateTableContainer } from "./styles"
+import { Guide } from "../../../GuideReguister/types";
+import { UpdateTableContainer } from "./styles";
 
-const UpdateTable = () => {
+export interface UpdateGuide {
+  guideIndex: number;
+  currentGuide: Guide;
+}
+
+const UpdateTable = ({ guideIndex, currentGuide }: UpdateGuide) => {
   return (
     <UpdateTableContainer>
-      <i className="table__closeModal">
-        <img src={XIcon} alt="close--modal" />
-      </i>
-      <h3 className="tableModal__title">Actualizar estado del envío</h3>
       <div className="tableModal__container">
         <table className="table__currentGuide">
           <thead className="table__currentGuide--header">
@@ -25,7 +26,39 @@ const UpdateTable = () => {
             </tr>
           </thead>
           <tbody className="table__currentGuide--body">
-            {/* <!--Elementos generados dinámicamente--> */}
+            {guideIndex !== -1 && currentGuide ? (
+              <tr>
+                <td>{currentGuide.guide__number}</td>
+                <td>
+                  {
+                    currentGuide.guide__stage[
+                      currentGuide.guide__stage.length - 1
+                    ]?.guide__status
+                  }
+                </td>
+                <td>{currentGuide.guide__origin}</td>
+                <td>{currentGuide.guide__destination}</td>
+                <td>{currentGuide.guide__recipient}</td>
+                <td>
+                  {
+                    currentGuide.guide__stage[
+                      currentGuide.guide__stage.length - 1
+                    ]?.guide__date
+                  }
+                </td>
+                <td>
+                  {
+                    currentGuide.guide__stage[
+                      currentGuide.guide__stage.length - 1
+                    ]?.guide__hour
+                  }
+                </td>
+              </tr>
+            ) : (
+              <tr>
+                <td>No hay valores para mostrar</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

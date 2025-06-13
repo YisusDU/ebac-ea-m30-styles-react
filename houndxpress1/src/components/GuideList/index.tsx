@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, SetStateAction } from "react";
+import React, { useRef, useEffect, SetStateAction, Children } from "react";
 import {
   GuideListContainer,
   GuideTable,
@@ -26,13 +26,24 @@ interface GuideStage {
 interface GuideListProps {
   guides: Guide[];
   setModalData: React.Dispatch<SetStateAction<string>>;
+  setIsOpenModal: React.Dispatch<SetStateAction<"Update" | "History" | "">>;
 }
 
-const GuideList = ({ guides, setModalData }: GuideListProps) => {
+const GuideList = ({
+  guides,
+  setIsOpenModal,
+  setModalData,
+}: GuideListProps) => {
   //Function to drag the table on scroll event
   const tableRef = useDraggTable();
 
-  
+  type ModalType = "History" | "Update";
+
+  const openModal = (guide: string, type: ModalType) => {
+    setModalData(guide);
+    setIsOpenModal(type);
+  };
+
   return (
     /* <!--Lista de guías--> */
     <GuideListContainer className="guide__list" id="guide__list">
@@ -74,10 +85,16 @@ const GuideList = ({ guides, setModalData }: GuideListProps) => {
                   {g.guide__stage[g.guide__stage.length - 1].guide__date}
                 </TableData>
                 <TableButtonsContainer className="guide__table--data list__buttonsContainer">
-                  <button className="guide__button guideButton--seeHistory">
+                  <button
+                    className="guide__button guideButton--seeHistory"
+                    onClick={() => openModal(g.guide__number, "History")}
+                  >
                     Ver Historial
                   </button>
-                  <button className="guide__button guide__button--updateState">
+                  <button
+                    className="guide__button guide__button--updateState"
+                    onClick={() => openModal(g.guide__number, "Update")}
+                  >
                     Actualizar Estado
                   </button>
                 </TableButtonsContainer>
