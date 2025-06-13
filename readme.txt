@@ -89,7 +89,7 @@ de cambiar de fixed a relative ha sido muy iluminador
     aplicar lógica al formulario ✅
     aplicar logica al modal history
     aplicar logica al modal update
-    aplicar logica a General state
+    aplicar logica a General state✅
 
 
 

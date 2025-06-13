@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, SetStateAction } from "react";
 import {
   GuideListContainer,
   GuideTable,
@@ -25,9 +25,10 @@ interface GuideStage {
 
 interface GuideListProps {
   guides: Guide[];
+  setModalData: React.Dispatch<SetStateAction<string>>;
 }
 
-const GuideList = ({ guides }: GuideListProps) => {
+const GuideList = ({ guides, setModalData }: GuideListProps) => {
   //Function to drag the table on scroll event
   const tableRef = useDraggTable();
 

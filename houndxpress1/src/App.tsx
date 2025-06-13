@@ -107,7 +107,7 @@ const App = () => {
         <Banner />
         <GuideRegister guides={guides} setGuides={setGuides} />
         <GeneralState guides={guides} />
-        <GuideList guides={guides} />
+        <GuideList guides={guides} setModalData={setModalData}/>
       </main>
       <Footer />
       <ModalHistory modalData={modalData} guides={guides}/>
